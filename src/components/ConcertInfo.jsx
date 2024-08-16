@@ -1,16 +1,21 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import ConcertDetail from "./ConcertDetail";
 import events from "./Data";
 import "../assets/css/ConcertList.css"
 
 function ConcertInfo() {
 
-    const navigate = useNavigate();
+    const [selectedEventId, setSelectedEventId] = useState(null);
 
     const handleDetailsClick = (id) => {
-        navigate(`/concertinfo/${id}`);
+        setSelectedEventId(id);
     };
 
+    const handleCloseModal = () => {
+        setSelectedEventId(null);
+    };
+
+    // 등록된 공연 없을 시
     if (events.length === 0) {
         return (
             <div className="list-container">
@@ -38,6 +43,10 @@ function ConcertInfo() {
                         </div>    
                     ))}
                 </div>
+
+                {selectedEventId && (
+                <ConcertDetail eventId={selectedEventId} onClose={handleCloseModal} />
+                )}
             </div>
     )
 };
