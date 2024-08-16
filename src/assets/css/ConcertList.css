@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.carousel {
+  padding: 70px 100px;
+  background-color: #bdbdbd;
+  color: #fff;
+  height: 80vh;
+  width: 100vw;
+}
+
+.carousel-list {
+  /* background-color: aqua; */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.carousel h2 {
+  padding: 0 20px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+  /* background-color: aliceblue; */
+  max-width: 1200px;
+}
+
+.box {
+  width: 170px;
+  background-color: rgb(61, 61, 61);
+  height: 470px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 30px;
+}
+
+.event-info {
+  padding-top: 20px;
+  /* background-color: aqua; */
+  text-align: center;
+}
+
+.event-info h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.event-info p {
+  font-size: 14px;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.list-container {
+  background-color: #bdbdbd;
+  /* margin-top: 100px; */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 리스트를 중앙 정렬 */
+  width: 100%;
+  flex-direction: column;
+}
+
+.list-container h2 {
+  margin: 40px;
+  font-size: 35px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.list {
+  width: 75rem;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 40px; 
+}
+
+.card {
+  width: 250px;
+  background-color: rgb(104, 104, 104);
+  color: #fff;
+  height: 470px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  padding: 30px;
+}
+
+.card-button button{
+  border: none;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 3px 5px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.slick-slide div {
+  margin: 0 1rem;
+}
