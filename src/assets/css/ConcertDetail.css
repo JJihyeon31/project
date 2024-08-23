@@ -3,9 +3,6 @@
     max-height: 700px;
     margin: 20px auto;
     padding: 20px;
-    /* border: 1px solid #ddd; */
-    /* border-radius: 8px; */
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     background-color: #fff;
     color: #000;
     display: flex;
@@ -77,8 +74,25 @@ button {
     border-radius: 8px;
     max-width: 1000px;
     width: 90%;
+    position: relative;
 }
 
-.back-button {
-    background-color: #e65151;
+.close-button {
+    position: absolute; /* 절대 위치 지정 */
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.view {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
 }

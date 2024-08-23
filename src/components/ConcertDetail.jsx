@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import events from "./Data";
-import "../assets/css/ConcertDetail.css"; // css
+import "../assets/css/ConcertDetail.css";
 
-// 동시렌더링 수정
 function ConcertDetail({eventId, onClose}) {
     const event = events.find(event => event.id === eventId);
 
+    // 닫기
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                onClose();
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [onClose]);
+    
     if (!event) {
         return <p>공연 정보를 찾을 수 없습니다.</p>;
     }
@@ -13,6 +27,7 @@ function ConcertDetail({eventId, onClose}) {
     return (
         <div className="modal-overlay">
             <div className="modal-content">
+                <button className="close-button" onClick={onClose}>×</button>
                 <div className="detail-container">
                     <div className="detail-img">
                         <img src={event.imageUrl} alt={event.title} />
@@ -21,8 +36,7 @@ function ConcertDetail({eventId, onClose}) {
                         <h2>{event.title}</h2>
                         <p><strong>날짜:</strong> {event.date}</p>
                         <p><strong>장소:</strong> {event.place}</p>
-                        <button className="location">위치 확인</button>
-                        <button onClick={onClose} className="back-button">닫기</button>
+                        <a href={event.url} target="_blank" rel="noopener norefferer" className="view">보러가기</a>
                     </div>
                 </div>
             </div>

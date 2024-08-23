@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ConcertDetail from "./ConcertDetail";
 import events from "./Data";
 import "../assets/css/ConcertList.css"
@@ -14,6 +14,20 @@ function ConcertInfo() {
     const handleCloseModal = () => {
         setSelectedEventId(null);
     };
+
+    // 스크롤 방지
+    useEffect(() => {
+        if (selectedEventId !== null) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto'; 
+        }
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [selectedEventId]);
+
+    
 
     // 등록된 공연 없을 시
     if (events.length === 0) {
