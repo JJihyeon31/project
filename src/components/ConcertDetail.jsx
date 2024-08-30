@@ -34,8 +34,8 @@ function ConcertDetail({eventId, onClose}) {
                     </div>
                     <div className="detail-info">
                         <h2>{event.title}</h2>
-                        <p><strong>날짜:</strong> {event.date}</p>
-                        <p><strong>장소:</strong> {event.place}</p>
+                        <p><strong>공연일시 : </strong> {event.date}</p>
+                        <p><strong>공연장소 : </strong> {event.place}</p>
                         <a href={event.url} target="_blank" rel="noopener norefferer" className="view">보러가기</a>
                     </div>
                 </div>
