@@ -1,5 +1,5 @@
 // 예제 데이터
-let events = [
+const events = [
     {
       id: 1,
       imageUrl:
@@ -66,4 +66,74 @@ let events = [
       url: "https://tickets.interpark.com/goods/24009132",
     },
   ];
-export default events;
+
+const dummyPosts = [
+  {
+    id:1,
+    title: "대학로 공연 같이 보실분",
+    date: "2024-08-23",
+    hits: 6
+  },
+  {
+    id:2,
+    title: "같이 보실분2",
+    date: "2024-08-23",
+    hits: 4
+  },
+  {
+    id:3,
+    title: "2322",
+    date: "2024-08-24",
+    hits: 45
+  },
+  {
+    id:4,
+    title: "홍대 공연 보실분",
+    date: "2024-08-25",
+    hits: 22
+  },
+  {
+    id:5,
+    title: "안녕하세요",
+    date: "2024-08-26",
+    hits: 8
+  },
+  {
+    id:6,
+    title: "안녕하세요",
+    date: "2024-08-26",
+    hits: 8
+  },
+  {
+    id:7,
+    title: "안녕하세요",
+    date: "2024-08-26",
+    hits: 8
+  },
+  {
+    id:8,
+    title: "안녕하세요",
+    date: "2024-08-26",
+    hits: 8
+  },
+  {
+    id:9,
+    title: "안녕하세요",
+    date: "2024-08-26",
+    hits: 8
+  },
+  {
+    id:10,
+    title: "안녕하세요",
+    date: "2024-08-26",
+    hits: 8
+  },
+  {
+    id:5,
+    title: "안녕하세요",
+    date: "2024-08-26",
+    hits: 8
+  },
+
+]
+export {events, dummyPosts};

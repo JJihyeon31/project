@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import events from "./Data";
+import {events} from "./Data";
 import "../assets/css/ConcertDetail.css";
 
 function ConcertDetail({eventId, onClose}) {

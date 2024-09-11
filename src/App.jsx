@@ -14,6 +14,8 @@ import Talk from "./pages/Talk";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import ConcertDetail from "./components/ConcertDetail";
+import TalkWrite from "./pages/TalkWrite";
+import TalkDetail from "./pages/TalkDetail";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/concertinfo/:id" element={<ConcertDetail />} />
+        <Route path="/write" element={<TalkWrite/>} />
+        <Route path="/talk/:id" element={<TalkDetail />} />
       </Routes>
     </>
   );
