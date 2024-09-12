@@ -1,58 +1,42 @@
-import React, {useState} from "react";
-import '../assets/css/PostWrite.css';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import '../assets/css/PostWrite.css';  
 
-const PostWrite = () => {
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
-    const navigate = useNavigate();
-    const handleTitleChange = e => {
-        setTitle(e.target.value);
-    };
+const PostWrite = ({ onAddPost }) => {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
 
-    const handleContentChange = e => {
-        setContent(e.target.value);
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (title && content) {
+      onAddPost(title, content);
+      alert('게시글을 등록했습니다.');
+      setTitle('');  // 폼 초기화
+      setContent('');
+    }
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        alert('게시글 작성 성공!');
-        console.log('제목:', title);
-        console.log('내용:', content);
-        
-        setTitle('');
-        setContent('');
-
-        navigate('/talk')
-    };
-
-    return (
-        <div className="write-post-container">
-            <form onSubmit={handleSubmit}>
-                <div className="form-container">
-                    <label htmlFor="title">제목</label>
-                    <input
-                        type="text"
-                        id="title"
-                        value={title}
-                        onChange={handleTitleChange}
-                        required
-                    />
-                </div>
-                <div className="form-container">
-                    <label htmlFor="content">내용</label>
-                    <textarea
-                        id="content"
-                        value={content}
-                        onChange={handleContentChange}
-                        required
-                    />
-                </div>
-                <button type="submit">작성 완료</button>
-            </form>
-        </div>
-    );
+  return (
+    <div className='new-post-container'>
+      <div className='form-container'>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="제목"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+          <textarea
+            placeholder="내용"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            required
+          />
+        <button type="submit">등록</button>
+      </form>
+      </div>
+    </div>
+  );
 };
 
 export default PostWrite;

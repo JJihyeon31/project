@@ -3,13 +3,13 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PostDetail from './../components/PostDetail';
 
-const TalkDetail = () => {
+const TalkDetail = ({posts, setPosts}) => {
 
   return (
     <div>
       <Header />
       <h1>인디토크</h1>
-      <PostDetail />
+      <PostDetail posts={posts} setPosts={setPosts}/>
       <Footer />
     </div>
   );
